@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="d" target="11" />
+      <module name="d.main" target="11" />
+      <module name="d.test" target="11" />
+      <module name="robot" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
