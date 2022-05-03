@@ -11,8 +11,6 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 import java.util.ResourceBundle;
 
-import java.util.logging.Logger;
-
 
 /**
  * The VM is configured to automatically run this class, and to call the methods corresponding to
@@ -21,8 +19,6 @@ import java.util.logging.Logger;
  * project.
  */
 public class Robot extends TimedRobot {
-    public static Logger LOGGER = Logger.getLogger(Robot.class.getName());
-
     private Command autonomousCommand;
     
     private RobotContainer robotContainer;

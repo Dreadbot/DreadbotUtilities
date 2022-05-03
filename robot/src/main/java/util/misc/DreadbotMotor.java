@@ -1,4 +1,6 @@
 package util.misc;
+import java.util.logging.Logger;
+
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.REVLibError;
 import com.revrobotics.RelativeEncoder;
@@ -15,6 +17,7 @@ public class DreadbotMotor{
     private final SparkMaxPIDController motorPIDController;
     private final String name;
     private boolean isDisabled = false;
+    private Logger logger = Logger.getLogger(Robot.class.getName());
 
     /**
      * Constructs a DreadbotMotor object by taking in a motor and a name of the motor
@@ -545,6 +548,6 @@ public class DreadbotMotor{
      * @param errorTrace The function that caused the motor to be disabled
      */
     private void printError(String errorTrace){
-        Robot.LOGGER.warning(name + "was disabled by " + errorTrace + "()");
+        logger.warning(name + "was disabled by " + errorTrace + "()");
     }
 }
