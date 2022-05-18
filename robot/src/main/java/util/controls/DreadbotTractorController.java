@@ -71,7 +71,7 @@ public class DreadbotTractorController {
      * Gets the state of the one button on the Tractor controller
      * @return The status of the one button
      */
-    public boolean is1ButtonPressed(){
+    public boolean isButton1Pressed(){
         return tractorController.getRawButton(1);
     }
 
@@ -79,7 +79,7 @@ public class DreadbotTractorController {
      * Gets the state of the two button on the Tractor controller
      * @return The status of the two button
      */
-    public boolean is2ButtonPressed(){
+    public boolean isButton2Pressed(){
         return tractorController.getRawButton(2);
     }
 
@@ -87,7 +87,7 @@ public class DreadbotTractorController {
      * Gets the state of the three button on the Tractor controller
      * @return The status of the three button
      */
-    public boolean is3ButtonPressed(){
+    public boolean isButton3Pressed(){
         return tractorController.getRawButton(3);
     }
 
@@ -95,7 +95,7 @@ public class DreadbotTractorController {
      * Gets the state of the four button on the Tractor controller
      * @return The status of the four button
      */
-    public boolean is4ButtonPressed(){
+    public boolean isButton4Pressed(){
         return tractorController.getRawButton(4);
     }
 
@@ -103,7 +103,7 @@ public class DreadbotTractorController {
      * Gets the state of the five button on the Tractor controller
      * @return The status of the five button
      */
-    public boolean is5ButtonPressed(){
+    public boolean isButton5Pressed(){
         return tractorController.getRawButton(5);
     }
 
@@ -111,7 +111,7 @@ public class DreadbotTractorController {
      * Gets the state of the six button on the Tractor controller
      * @return The status of the six button
      */
-    public boolean is6ButtonPressed(){
+    public boolean isButton6Pressed(){
         return tractorController.getRawButton(6);
     }
 
@@ -119,7 +119,7 @@ public class DreadbotTractorController {
      * Gets the state of the seven button on the Tractor controller
      * @return The status of the seven button
      */
-    public boolean is7ButtonPressed(){
+    public boolean isButton7Pressed(){
         return tractorController.getRawButton(7);
     }
 
@@ -127,7 +127,7 @@ public class DreadbotTractorController {
      * Gets the state of the eight button on the Tractor controller
      * @return The status of the eight button
      */
-    public boolean is8ButtonPressed(){
+    public boolean isButton8Pressed(){
         return tractorController.getRawButton(8);
     }
 
@@ -135,7 +135,7 @@ public class DreadbotTractorController {
      * Gets the state of the nine button on the Tractor controller
      * @return The status of the nine button
      */
-    public boolean is9ButtonPressed(){
+    public boolean isButton9Pressed(){
         return tractorController.getRawButton(9);
     }
 
@@ -143,7 +143,7 @@ public class DreadbotTractorController {
      * Gets the state of the ten button on the Tractor controller
      * @return The status of the ten button
      */
-    public boolean is10ButtonPressed(){
+    public boolean isButton10Pressed(){
         return tractorController.getRawButton(10);
     }
 
@@ -151,7 +151,7 @@ public class DreadbotTractorController {
      * Gets the state of the eleven button on the Tractor controller
      * @return The status of the eleven button
      */
-    public boolean is11ButtonPressed(){
+    public boolean isButton11Pressed(){
         return tractorController.getRawButton(11);
     }
 
@@ -159,7 +159,7 @@ public class DreadbotTractorController {
      * Gets the state of the twelve button on the Tractor controller
      * @return The status of the twelve button
      */
-    public boolean is12ButtonPressed(){
+    public boolean isButton12Pressed(){
         return tractorController.getRawButton(12);
     }
 
@@ -167,7 +167,7 @@ public class DreadbotTractorController {
      * Gets the state of the thirteen button on the Tractor controller
      * @return The status of the thirteen button
      */
-    public boolean is13ButtonPressed(){
+    public boolean isButton13Pressed(){
         return tractorController.getRawButton(13);
     }
 
@@ -175,7 +175,7 @@ public class DreadbotTractorController {
      * Gets the state of the fourteen button on the Tractor controller
      * @return The status of the fourteen button
      */
-    public boolean is14ButtonPressed(){
+    public boolean isButton14Pressed(){
         return tractorController.getRawButton(14);
     }
 
@@ -183,7 +183,7 @@ public class DreadbotTractorController {
      * Gets the state of the fifteen button on the Tractor controller
      * @return The status of the fifteen button
      */
-    public boolean is15ButtonPressed(){
+    public boolean isButton15Pressed(){
         return tractorController.getRawButton(15);
     }
 
@@ -191,7 +191,7 @@ public class DreadbotTractorController {
      * Gets the state of the sixteen button on the Tractor controller
      * @return The status of the sixteen button
      */
-    public boolean is16ButtonPressed(){
+    public boolean isButton16Pressed(){
         return tractorController.getRawButton(16);
     }
 
@@ -199,7 +199,7 @@ public class DreadbotTractorController {
      * Gets the state of the seventeen switch on the Tractor controller
      * @return The status of the seventeen switch
      */
-    public boolean is17SwitchPressed(){
+    public boolean isSwitch17Pressed(){
         return tractorController.getRawButton(17);
     }
 
@@ -207,7 +207,7 @@ public class DreadbotTractorController {
      * Gets the state of the eighteen switch on the Tractor controller
      * @return The status of the eighteen switch
      */
-    public boolean is18SwitchPressed(){
+    public boolean isSwitch18Pressed(){
         return tractorController.getRawButton(18);
     }
 
@@ -215,7 +215,7 @@ public class DreadbotTractorController {
      * Gets the state of the nineteen switch on the Tractor controller
      * @return The status of the nineteen switch
      */
-    public boolean is19SwitchPressed(){
+    public boolean isSwitch19Pressed(){
         return tractorController.getRawButton(19);
     }
 
@@ -223,7 +223,7 @@ public class DreadbotTractorController {
      * Gets the state of the twenty switch on the Tractor controller
      * @return The status of the twenty switch
      */
-    public boolean is20SwitchPressed(){
+    public boolean isSwitch20Pressed(){
         return tractorController.getRawButton(20);
     }
 
@@ -239,7 +239,7 @@ public class DreadbotTractorController {
      * Gets the state of the twenty-two button on the Tractor controller
      * @return The status of the twenty-two button
      */
-    public boolean is22ButtonPressed(){
+    public boolean isButton22Pressed(){
         return tractorController.getRawButton(22);
     }
 
@@ -247,7 +247,7 @@ public class DreadbotTractorController {
      * Gets the state of the twenty-three button on the Tractor controller
      * @return The status of the twenty-three button
      */
-    public boolean is23ButtonPressed(){
+    public boolean isButton23Pressed(){
         return tractorController.getRawButton(23);
     }
 
@@ -255,7 +255,7 @@ public class DreadbotTractorController {
      * Gets the state of the twenty-four button on the Tractor controller
      * @return The status of the twenty-four button
      */
-    public boolean is24ButtonPressed(){
+    public boolean isButton24Pressed(){
         return tractorController.getRawButton(24);
     }
 
