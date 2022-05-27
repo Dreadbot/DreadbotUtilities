@@ -8,7 +8,6 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import util.controls.DreadbotBongos;
 
 import java.util.ResourceBundle;
 
@@ -20,7 +19,6 @@ import java.util.ResourceBundle;
  * project.
  */
 public class Robot extends TimedRobot {
-    DreadbotBongos db = new DreadbotBongos(0);
 
     private Command autonomousCommand;
     
@@ -96,9 +94,7 @@ public class Robot extends TimedRobot {
     
     /** This method is called periodically during operator control. */
     @Override
-    public void teleopPeriodic() {
-        System.out.println(db.getClapMicInputFiltered());
-    }
+    public void teleopPeriodic() {}
 
 
     @Override
