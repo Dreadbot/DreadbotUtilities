@@ -1,16 +1,61 @@
 // Copyright (c) FIRST and other WPILib contributors.
-
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot;
 
-/**
- * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
- * constants. This class should not be used for any other purpose. All constants should be declared
- * globally (i.e. public static). Do not put anything functional in this class.
- *
- * <p>It is advised to statically import this class (or one of its inner classes) wherever the
- * constants are needed, to reduce verbosity.
- */
-public final class Constants {}
+import edu.wpi.first.math.util.Units;
+import edu.wpi.first.wpilibj.I2C;
+import edu.wpi.first.wpilibj.SerialPort;
+import edu.wpi.first.wpilibj.util.Color;
+
+@SuppressWarnings("SpellCheckingInspection")
+public abstract class Constants {
+    //region * SECTION - CONTROL PANEL
+    public static final boolean DRIVE_ENABLED        = true;
+
+    //endregion
+
+    //region * SECTION - ROBOT PORTS
+    // =================================================================================================================
+
+    // Joystick Ports
+    public static final int PRIMARY_JOYSTICK_PORT   = 0;
+    public static final int SECONDARY_JOYSTICK_PORT = 1;
+
+    // Motor Ports
+    public static final int LEFT_FRONT_DRIVE_MOTOR_PORT  = 1;
+    public static final int RIGHT_FRONT_DRIVE_MOTOR_PORT = 2;
+    public static final int LEFT_BACK_DRIVE_MOTOR_PORT   = 3;
+    public static final int RIGHT_BACK_DRIVE_MOTOR_PORT  = 4;
+
+
+    //region * SECTION - DRIVE CONSTANTS
+    // =================================================================================================================
+
+    // Drive Controller Constants
+    public static final double TRAJECTORY_ERROR_CONTROLLER_P = 3.6109d;
+    public static final double WHEEL_CONTROLLER_P            = 1.0d;
+
+    // Drive Mechanical Wheel Specifications
+    public static final double WHEEL_GEARING                  = 14.0d / 70.0d;
+    public static final double WHEEL_CIRCUMFERENCE_METERS     = Units.inchesToMeters(3.0d) * 2 * Math.PI;
+    public static final double WHEEL_ROTATIONS_TO_METERS      = WHEEL_CIRCUMFERENCE_METERS * WHEEL_GEARING;
+    public static final double WHEEL_RPM_TO_METERS_PER_SECOND = WHEEL_ROTATIONS_TO_METERS / 60.0d;
+
+    // This is how far the wheel centers are from the physical center of the robot
+    // Longitudinal (forward/backward) and Lateral (side/side) distances are useful for kinematics.
+    public static final double WHEEL_LONGITUDINAL_DISPLACEMENT = 0.19d;   // meters
+    public static final double WHEEL_LATERAL_DISPLACEMENT      = 0.4191d; // meters
+
+    // These are the individual wheel feedforward gains
+    public static final double WHEEL_FEED_STATIC_FRICTION_GAIN = 0.09185d;
+    public static final double WHEEL_FEED_VELOCITY_GAIN        = 3.1899d;
+    public static final double WHEEL_FEED_ACCELERATION_GAIN    = 0.17172d;
+    //endregion
+
+
+    private Constants() throws IllegalStateException {
+        throw new IllegalStateException("Constants is a utility class. It should not be instantiated.");
+    }
+}
