@@ -1,8 +1,7 @@
-package frc.robot.subsystems;
+package util.misc;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Robot;
 import util.safety.MotorSafeSystem;
 
 /**

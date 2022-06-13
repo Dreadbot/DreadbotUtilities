@@ -1,27 +1,70 @@
 package util.drive;
 
-import util.misc.DreadbotMotor;
-
 import com.kauailabs.navx.frc.AHRS;
+import edu.wpi.first.math.geometry.Pose2d;
+import edu.wpi.first.math.kinematics.ChassisSpeeds;
+import util.misc.DreadbotSubsystem;
+import util.DreadbotMotor;
 
-public abstract class Drive {
-    //Motor objects
-    private DreadbotMotor frontLeftMotor;
-    private DreadbotMotor frontRightMotor;
-    private DreadbotMotor backLeftMotor;
-    private DreadbotMotor backRightMotor;
+/**
+ * The drive is the mechanism that moves the robot across the field. We are using a mecanum drive.
+ */
+public class Drive extends DreadbotSubsystem {
+    // Motor Objects
+    protected DreadbotMotor leftFrontMotor;
+    protected DreadbotMotor rightFrontMotor;
+    protected DreadbotMotor leftBackMotor;
+    protected DreadbotMotor rightBackMotor;
 
-    //NavX GyroScope
-    private AHRS gyroscope;
+    // NavX Gyroscope
+    protected AHRS gyroscope;
 
-    public Drive(DreadbotMotor frontLeftMotor, DreadbotMotor frontRightMotor,
-                 DreadbotMotor backLeftMotor, DreadbotMotor backRightMotor, AHRS gyroscope) {
-        this.frontLeftMotor = frontLeftMotor;
-        this.frontRightMotor = frontRightMotor;
-        this.backLeftMotor = backLeftMotor;
-        this.backRightMotor = backRightMotor;
+    // Target ChassisSpeeds commanded by teleop directions or
+    protected ChassisSpeeds targetChassisSpeeds;
 
-        this.gyroscope = gyroscope;
+    @Override
+    public void stopMotors() {
+        if(isDisabled()) return;
+
+        try {
+            //mecanumDrive.stopMotor();
+            leftFrontMotor.stopMotor();
+            rightFrontMotor.stopMotor();
+            leftBackMotor.stopMotor();
+            rightBackMotor.stopMotor();
+        } catch (IllegalStateException ignored) { disable(); }
+    }
+
+    @Override
+    public void close() {
+        // Stop motors before closure
+        stopMotors();
+
+        try {
+            leftFrontMotor.close();
+            rightFrontMotor.close();
+            leftBackMotor.close();
+            rightBackMotor.close();
+        } catch (IllegalStateException ignored) { disable(); }
+    }
+
+    /**
+     * Resets the encoder positions.
+     */
+    public void resetEncoders() {
+        if(isDisabled()) return;
+
+        rightFrontMotor.resetEncoder();
+        leftFrontMotor.resetEncoder();
+    }
+
+    /**
+     * Returns the gyroscope yaw.
+     *
+     * @return The gyroscope yaw
+     */
+    public double getYaw() {
+        return gyroscope.getYaw();
     }
 
     public AHRS getGyroscope() {
