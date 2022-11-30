@@ -10,7 +10,6 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import util.drive.Swerve;
 
-import java.util.ResourceBundle;
 
 
 /**
@@ -93,7 +92,7 @@ public class Robot extends TimedRobot {
             autonomousCommand.cancel();
         }
 
-        //swerveDrive.drive(xSpeed, ySpeed, rot, fieldRelative);
+        //swerveDrive.drive(xSpeed, ySpeed, rot, true);
     }
     
     

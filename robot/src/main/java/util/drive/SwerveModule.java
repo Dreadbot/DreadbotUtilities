@@ -3,7 +3,6 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package util.drive;
-
 import com.ctre.phoenix.sensors.CANCoder;
 import com.ctre.phoenix.sensors.CANCoderConfiguration;
 import com.ctre.phoenix.sensors.SensorTimeBase;
