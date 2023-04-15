@@ -25,7 +25,7 @@ import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Constants;
 import util.drive.Drive;
-import util.DreadbotMotor;
+import util.misc.DreadbotMotor;
 import util.math.DreadbotMath;
 
 import java.util.stream.Stream;

@@ -4,7 +4,7 @@ import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import util.misc.DreadbotSubsystem;
-import util.DreadbotMotor;
+import util.misc.DreadbotMotor;
 
 /**
  * The drive is the mechanism that moves the robot across the field. We are using a mecanum drive.
