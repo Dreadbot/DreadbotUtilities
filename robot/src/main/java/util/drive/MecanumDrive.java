@@ -16,6 +16,7 @@ import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.kinematics.MecanumDriveKinematics;
 import edu.wpi.first.math.kinematics.MecanumDriveOdometry;
+import edu.wpi.first.math.kinematics.MecanumDriveWheelPositions;
 import edu.wpi.first.math.kinematics.MecanumDriveWheelSpeeds;
 import edu.wpi.first.math.trajectory.TrapezoidProfile;
 import edu.wpi.first.math.util.Units;
@@ -103,7 +104,7 @@ public class MecanumDrive extends Drive {
         configureMotors();
         resetEncoders();
 
-        odometry = new MecanumDriveOdometry(kinematics, gyroscope.getRotation2d());
+        odometry = new MecanumDriveOdometry(kinematics, gyroscope.getRotation2d(), getWheelPositions());
 
         this.mecanumDrive = new edu.wpi.first.wpilibj.drive.MecanumDrive(leftFrontMotor.getSparkMax(), leftBackMotor.getSparkMax(),
             rightFrontMotor.getSparkMax(), rightBackMotor.getSparkMax());
@@ -117,7 +118,7 @@ public class MecanumDrive extends Drive {
     public void periodic() {
         if(isDisabled()) return;
 
-        odometry.update(gyroscope.getRotation2d(), getWheelSpeeds());
+        odometry.update(gyroscope.getRotation2d(), getWheelPositions());
         field2d.setRobotPose(getPose());
 
         SmartDashboard.putNumber("GYRO PITCH", gyroscope.getPitch());
@@ -199,6 +200,16 @@ public class MecanumDrive extends Drive {
             rightFrontMotor.getVelocity(),
             leftBackMotor.getVelocity(),
             rightBackMotor.getVelocity()
+        );
+    }
+
+    public MecanumDriveWheelPositions getWheelPositions() {
+        if(isDisabled()) return new MecanumDriveWheelPositions();
+        return new MecanumDriveWheelPositions(
+            leftFrontMotor.getPosition() * Constants.WHEEL_ROTATIONS_TO_METERS,
+            rightFrontMotor.getPosition() * Constants.WHEEL_ROTATIONS_TO_METERS,
+            leftBackMotor.getPosition() * Constants.WHEEL_ROTATIONS_TO_METERS,
+            rightBackMotor.getPosition() * Constants.WHEEL_ROTATIONS_TO_METERS
         );
     }
 
@@ -299,7 +310,7 @@ public class MecanumDrive extends Drive {
      * @param poseMeters The requested "zero" position of the odometry.
      */
     public void resetRobotPose(Pose2d poseMeters) {
-        odometry.resetPosition(poseMeters, gyroscope.getRotation2d());
+        odometry.resetPosition(gyroscope.getRotation2d(), getWheelPositions(), poseMeters);
     }
 
     

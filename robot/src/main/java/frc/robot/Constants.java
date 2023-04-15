@@ -58,4 +58,21 @@ public abstract class Constants {
     private Constants() throws IllegalStateException {
         throw new IllegalStateException("Constants is a utility class. It should not be instantiated.");
     }
+    public static class SwerveConstants {
+        public static final double ATTAINABLE_MAX_SPEED = 2.50;
+        public static final double MODULE_Y_OFFSET = Units.inchesToMeters(26.0) / 2; // Between the front and back
+        public static final double MODULE_X_OFFSET = Units.inchesToMeters(23.0) / 2; // Between the left and right
+        // Encoder offsets are in degrees, not radians
+        public static final double FRONT_LEFT_ENCODER_OFFSET = -137.021 + 180;
+        public static final double FRONT_RIGHT_ENCODER_OFFSET = -31.816 - 2;
+        public static final double BACK_LEFT_ENCODER_OFFSET = -116.895 - 1;
+        public static final double BACK_RIGHT_ENCODER_OFFSET = -121.904 + 180 + 2;
+        public static final double DRIVE_GEAR_RATIO = (14.0 / 50.0) * (27.0 / 17.0) * (15.0 / 45.0);
+        public static final double TURN_GEAR_RATIO = 150 / 7;
+        public static final double WHEEL_DIAMETER = Units.inchesToMeters(4.0);
+      }
+      public static class AutonomousConstants {
+        public static final double MAX_SPEED_METERS_PER_SECOND = 2.5;
+        public static final double MAX_ACCELERATION_METERS_PER_SECOND_SQUARED = 1.25;
+      }
 }

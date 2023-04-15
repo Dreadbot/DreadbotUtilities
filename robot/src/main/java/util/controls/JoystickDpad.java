@@ -1,13 +1,14 @@
 package util.controls;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj2.command.button.Button;
+import edu.wpi.first.wpilibj2.command.button.POVButton;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**
  * This class provides a way to trigger commands with inputs
  * from the Dpad of a Joystick 
  */
-public class JoystickDpad extends Button {
+public class JoystickDpad extends POVButton {
     private final Joystick joystick;
     private final int position;
 
@@ -18,6 +19,7 @@ public class JoystickDpad extends Button {
      * @param position The position of the Dpad
      */
     public JoystickDpad(Joystick joystick, int position){
+        super(joystick, position);
         this.joystick = joystick;
         if(position > 315 || position < -1) {
             this.position = 0;
@@ -29,7 +31,6 @@ public class JoystickDpad extends Button {
     /**
      * @return Status of the POV of the joystick matching the POV provided
      */
-    @Override
     public boolean get(){
         return joystick.getPOV() == position;
     }

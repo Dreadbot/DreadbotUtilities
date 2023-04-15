@@ -5,12 +5,13 @@
 
 package frc.robot;
 
+import com.ctre.phoenix.sensors.CANCoder;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import util.controls.DreadbotController;
-import util.drive.Swerve;
 
 
 
@@ -25,10 +26,6 @@ public class Robot extends TimedRobot {
     private Command autonomousCommand;
     
     private RobotContainer robotContainer;
-
-    private Swerve swerveDrive = new Swerve();
-    private DreadbotController joyStick0 = new DreadbotController(0);
-    
     /**
      * This method is run when the robot is first started up and should be used for any
      * initialization code.
@@ -93,8 +90,6 @@ public class Robot extends TimedRobot {
         if (autonomousCommand != null) {
             autonomousCommand.cancel();
         }
-
-        swerveDrive.drive(joyStick0.getXAxis(), joyStick0.getYAxis(), joyStick0.getZAxis(), true);
     }
     
     
